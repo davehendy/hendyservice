@@ -24,7 +24,7 @@ public class MenuServiceDefault implements MenuService {
 	}
 	
 	/**
-	 * Just used for test purposes
+	 * Just used for testing purposes
 	 * @return a test Menu
 	 */
 	private MenuDTO getTestMenu() {
