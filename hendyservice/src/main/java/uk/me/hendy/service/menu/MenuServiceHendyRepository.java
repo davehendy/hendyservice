@@ -26,7 +26,11 @@ public class MenuServiceHendyRepository implements MenuService {
 		Menu menu = repositoryApplication.getMenu(menuName);
 		
 		menuDto.setMenuName(menu.getName());
-			
+		MenuItemDTO menuItemDto = new MenuItemDTO();
+		for (MenuItem menuItem : menu.getMenuItemSet()){
+		//	menu
+		}
+		//menuDto.setMenuItemArray(menu.getMenuItemSet());			
 		return menuDto;
 	}
 	
