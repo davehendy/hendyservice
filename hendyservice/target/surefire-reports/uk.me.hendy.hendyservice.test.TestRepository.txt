@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: uk.me.hendy.hendyservice.test.TestRepository
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 3.059 sec <<< FAILURE!
-test(uk.me.hendy.hendyservice.test.TestRepository)  Time elapsed: 0.936 sec  <<< ERROR!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 2.998 sec <<< FAILURE!
+test(uk.me.hendy.hendyservice.test.TestRepository)  Time elapsed: 0.958 sec  <<< ERROR!
 javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionException: Could not open connection
 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1763)
 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1694)
@@ -49,7 +49,7 @@ javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionEx
 	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:201)
-	at com.sun.proxy.$Proxy35.getMenu(Unknown Source)
+	at com.sun.proxy.$Proxy36.getMenu(Unknown Source)
 	at uk.me.hendy.hendyservice.test.TestRepository.test(TestRepository.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
@@ -160,7 +160,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259)
 	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:307)
 	... 120 more
-testinsert(uk.me.hendy.hendyservice.test.TestRepository)  Time elapsed: 1.046 sec  <<< ERROR!
+test3(uk.me.hendy.hendyservice.test.TestRepository)  Time elapsed: 1.02 sec  <<< ERROR!
 org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionException: Could not open connection
 	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:430)
 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
@@ -169,8 +169,8 @@ org.springframework.transaction.CannotCreateTransactionException: Could not open
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy35.insertMenu(Unknown Source)
-	at uk.me.hendy.hendyservice.test.TestRepository.testinsert(TestRepository.java:39)
+	at com.sun.proxy.$Proxy36.deleteMenu(Unknown Source)
+	at uk.me.hendy.hendyservice.test.TestRepository.test3(TestRepository.java:45)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -273,7 +273,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259)
 	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:307)
 	... 71 more
-test3(uk.me.hendy.hendyservice.test.TestRepository)  Time elapsed: 1.03 sec  <<< ERROR!
+testinsert(uk.me.hendy.hendyservice.test.TestRepository)  Time elapsed: 1.015 sec  <<< ERROR!
 org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionException: Could not open connection
 	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:430)
 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
@@ -282,8 +282,8 @@ org.springframework.transaction.CannotCreateTransactionException: Could not open
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy35.deleteMenu(Unknown Source)
-	at uk.me.hendy.hendyservice.test.TestRepository.test3(TestRepository.java:45)
+	at com.sun.proxy.$Proxy36.insertMenu(Unknown Source)
+	at uk.me.hendy.hendyservice.test.TestRepository.testinsert(TestRepository.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

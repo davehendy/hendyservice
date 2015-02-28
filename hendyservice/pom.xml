@@ -39,7 +39,6 @@
 			<groupId>uk.me.hendy</groupId>
 			<artifactId>hendyrepository</artifactId>
 			<version>1.0.0.CI-SNAPSHOT</version>
-			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 

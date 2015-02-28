@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: uk.me.hendy.hendyservice.test.TestMenu
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 12.786 sec <<< FAILURE!
-testMenu(uk.me.hendy.hendyservice.test.TestMenu)  Time elapsed: 10.881 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 11.383 sec <<< FAILURE!
+testMenu(uk.me.hendy.hendyservice.test.TestMenu)  Time elapsed: 9.768 sec  <<< ERROR!
 javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionException: Could not open connection
 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1763)
 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1694)
@@ -49,7 +49,7 @@ javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionEx
 	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:201)
-	at com.sun.proxy.$Proxy35.getMenu(Unknown Source)
+	at com.sun.proxy.$Proxy36.getMenu(Unknown Source)
 	at uk.me.hendy.hendyservice.test.TestMenu.getMenu(TestMenu.java:40)
 	at uk.me.hendy.hendyservice.test.TestMenu.testMenu(TestMenu.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -161,7 +161,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:259)
 	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:307)
 	... 121 more
-testMenuHtml(uk.me.hendy.hendyservice.test.TestMenu)  Time elapsed: 1.076 sec  <<< ERROR!
+testMenuHtml(uk.me.hendy.hendyservice.test.TestMenu)  Time elapsed: 1.011 sec  <<< ERROR!
 javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionException: Could not open connection
 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1763)
 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1694)
@@ -208,7 +208,7 @@ javax.persistence.PersistenceException: org.hibernate.exception.JDBCConnectionEx
 	at java.lang.reflect.Method.invoke(Method.java:606)
 	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:201)
-	at com.sun.proxy.$Proxy35.getMenu(Unknown Source)
+	at com.sun.proxy.$Proxy36.getMenu(Unknown Source)
 	at uk.me.hendy.hendyservice.test.TestMenu.getMenu(TestMenu.java:40)
 	at uk.me.hendy.hendyservice.test.TestMenu.testMenuHtml(TestMenu.java:32)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
