@@ -1,36 +1,53 @@
 package uk.me.hendy.service.menu;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import uk.me.hendy.repository.RepositoryApplication;
+import uk.me.hendy.repository.dao.impl.MenuDaoJpa;
 import uk.me.hendy.repository.model.Menu;
 import uk.me.hendy.repository.model.MenuItem;
+import uk.me.hendy.service.message.Message;
 
 /**
  * {@inheritDoc}
  */
 @Service("menuService")
 public class MenuServiceHendyRepository implements MenuService {
+	private static final Logger logger = LoggerFactory.getLogger(MenuServiceHendyRepository.class);
 	
 	@Autowired
 	RepositoryApplication repositoryApplication;
 
 	public MenuDTO getMenu(String menuName) {
 		MenuDTO menuDto = new MenuDTO();
+		MenuItemDTOComparator comparator = new MenuItemDTOComparator();
 		Menu menu = repositoryApplication.getMenu(menuName);
-		
-		menuDto.setMenuName(menu.getName());
-		MenuItemDTO menuItemDto = new MenuItemDTO();
-		for (MenuItem menuItem : menu.getMenuItemSet()){
-		//	menu
+		if (menu != null) {
+			menuDto.setMenuName(menu.getName());
+			
+			for (MenuItem menuItem : menu.getMenuItemSet()){
+				MenuItemDTO menuItemDto = new MenuItemDTO();
+				menuItemDto.setMenuItemName(menuItem.getName());
+				menuItemDto.setMenuItemLink(menuItem.getLinkUrl());
+				menuItemDto.setMenuItemSeq(menuItem.getMenuSeq());
+				menuDto.getMenuItemArray().add(menuItemDto);
+			}
+			Collections.sort(menuDto.getMenuItemArray(), comparator);
+		} else {
+			logger.error("Menu " + menuName + " not found.");
+			menuDto.setMenuName(menuName);
+			menuDto.setMenuDescription(Message.NO_MENU.toString());
 		}
-		//menuDto.setMenuItemArray(menu.getMenuItemSet());			
+					
 		return menuDto;
 	}
 	

@@ -18,6 +18,7 @@ public class TestMenu {
 
 	@Test
 	public void testMenu() {
+		System.out.println("Start testMenu");
 		String menuName = "davetest";
 		MenuDTO menu = getMenu(menuName);
 		assertNotNull(menu);
