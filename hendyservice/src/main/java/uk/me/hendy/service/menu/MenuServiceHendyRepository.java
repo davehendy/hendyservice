@@ -16,6 +16,7 @@ import uk.me.hendy.repository.dao.impl.MenuDaoJpa;
 import uk.me.hendy.repository.model.Menu;
 import uk.me.hendy.repository.model.MenuItem;
 import uk.me.hendy.service.message.Message;
+import uk.me.hendy.service.utility.JsonUtility;
 
 /**
  * {@inheritDoc}
@@ -56,6 +57,15 @@ public class MenuServiceHendyRepository implements MenuService {
 	 */
 	public String getMenuAsHtml(String menuName) {
 		return this.getMenu(menuName).getHtml();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public String getMenuAsJson(String menuName) {
+		logger.debug("getMenuAsJson("+menuName+")");
+		
+		return JsonUtility.toJson(this.getMenu(menuName));
 	}
 	
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=false)

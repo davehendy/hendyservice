@@ -2,6 +2,8 @@ package uk.me.hendy.service.menu;
 
 import org.springframework.stereotype.Service;
 
+import uk.me.hendy.service.utility.JsonUtility;
+
 /**
  * {@inheritDoc}
  */
@@ -21,6 +23,15 @@ public class MenuServiceDefault implements MenuService {
 	 */
 	public String getMenuAsHtml(String menuName) {
 		return this.getMenu(menuName).getHtml();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	public String getMenuAsJson(String menuName) {
+		//return this.getMenu(menuName).getHtml();
+		
+		return JsonUtility.toJson(this.getMenu(menuName));
 	}
 	
 	/**

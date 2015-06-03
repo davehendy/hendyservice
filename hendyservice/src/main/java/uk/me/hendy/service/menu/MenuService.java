@@ -29,6 +29,13 @@ public interface MenuService {
 	 */
 	String getMenuAsHtml(String menuName);
 	
+	/**
+	 * 
+	 * @param menuName
+	 * @return Json String
+	 */
+	String getMenuAsJson(String menuName);
+	
 	void insertMenu(MenuDTO menuDTO);
 	
 	void deleteMenu(String id);
