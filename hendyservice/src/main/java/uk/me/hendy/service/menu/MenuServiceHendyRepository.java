@@ -6,17 +6,16 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import uk.me.hendy.repository.RepositoryApplication;
-import uk.me.hendy.repository.dao.impl.MenuDaoJpa;
 import uk.me.hendy.repository.model.Menu;
 import uk.me.hendy.repository.model.MenuItem;
 import uk.me.hendy.service.message.Message;
 import uk.me.hendy.service.utility.JsonUtility;
+import uk.me.hendy.service.utility.RepositoryUtility;
 
 /**
  * {@inheritDoc}
@@ -25,10 +24,16 @@ import uk.me.hendy.service.utility.JsonUtility;
 public class MenuServiceHendyRepository implements MenuService {
 	private static final Logger logger = LoggerFactory.getLogger(MenuServiceHendyRepository.class);
 	
-	@Autowired
+	//Autowired
+	//MenuDao menuDao;
 	RepositoryApplication repositoryApplication;
+	//private static RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
 
 	public MenuDTO getMenu(String menuName) {
+		logger.debug("getMenu(" + menuName + ")");
+		//RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
+		repositoryApplication = RepositoryUtility.start();
+		
 		MenuDTO menuDto = new MenuDTO();
 		MenuItemDTOComparator comparator = new MenuItemDTOComparator();
 		Menu menu = repositoryApplication.getMenu(menuName);
@@ -65,7 +70,7 @@ public class MenuServiceHendyRepository implements MenuService {
 	public String getMenuAsJson(String menuName) {
 		logger.debug("getMenuAsJson("+menuName+")");
 		
-		return JsonUtility.toJson(this.getMenu(menuName));
+		return JsonUtility.toJson(this.getMenu(menuName), false);
 	}
 	
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=false)
@@ -85,6 +90,7 @@ public class MenuServiceHendyRepository implements MenuService {
 		menu.setMenuItemSet(menuItemSet);
 		
 		repositoryApplication.createMenu(menu);
+		
 	}
 	
 
@@ -93,5 +99,6 @@ public class MenuServiceHendyRepository implements MenuService {
 		Menu menu = new Menu();
 		menu.setName(id);
 		repositoryApplication.removeMenu(menu);
+		
 	}
 }

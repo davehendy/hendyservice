@@ -31,7 +31,7 @@ public class MenuServiceDefault implements MenuService {
 	public String getMenuAsJson(String menuName) {
 		//return this.getMenu(menuName).getHtml();
 		
-		return JsonUtility.toJson(this.getMenu(menuName));
+		return JsonUtility.toJson(this.getMenu(menuName), false);
 	}
 	
 	/**

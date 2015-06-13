@@ -7,12 +7,16 @@ import org.slf4j.LoggerFactory;
 public class JsonUtility {
 	private static final Logger logger = LoggerFactory.getLogger(JsonUtility.class);
 	
-	public static String toJson(Object o) {
+	public static String toJson(Object o, boolean pretty) {
 		logger.debug("toJson("+o+")");
 		ObjectMapper mapper = new ObjectMapper();
 		String json=null;
 		try {
-			json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(o);
+			if (pretty) {
+				json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(o);
+			} else {
+				json = mapper.writeValueAsString(o);
+			}
 		} catch (Exception e) {
 			logger.error(e.toString());
 			e.printStackTrace();
