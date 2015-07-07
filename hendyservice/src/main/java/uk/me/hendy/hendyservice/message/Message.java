@@ -1,4 +1,4 @@
-package uk.me.hendy.service.message;
+package uk.me.hendy.hendyservice.message;
 
 public enum Message {
 	

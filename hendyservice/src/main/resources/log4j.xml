@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <!--
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m %n" />
+            -->
+            <param name="ConversionPattern" value="%d{dd.MM.YYYY-HH:mm:ss,SSS} %-5p [%c] %m %n" />
+        </layout>
+</appender>
+    
+<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+   <!--  <param name="file" value="/home/hendymeu/public_html/log4j.log"/>-->
+   <param name="file" value="${user.home}/hendyservice-log4j.log"/>
+   <param name="threshold" value="debug"/>
+   <param name="append" value="true"/>
+   <param name="DatePattern" value="'.'yyyy-MM-dd" />
+   <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{dd.MM.YYYY-HH:mm:ss,SSS} %-5p [%c] %m %n"/>
+   </layout>
+</appender>
+
+<logger name="uk.me.hendy" additivity="false">
+   <level value="DEBUG"/>
+   <appender-ref ref="FILE"/>
+   <appender-ref ref="STDOUT" />
+</logger>
+<logger name="org.springframework" additivity="false">
+   <level value="DEBUG"/>
+   <appender-ref ref="FILE"/>
+   <appender-ref ref="STDOUT" />
+</logger>
+<logger name="org.apache.log4j" additivity="false">
+   <level value="INFO"/>
+   <appender-ref ref="FILE"/>
+   <appender-ref ref="STDOUT" />
+</logger>
+
+</log4j:configuration>

@@ -1,8 +1,11 @@
-package uk.me.hendy.service.utility;
+package uk.me.hendy.hendyservice.utility;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 
 public class JsonUtility {
 	private static final Logger logger = LoggerFactory.getLogger(JsonUtility.class);

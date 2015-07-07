@@ -3,7 +3,7 @@ package uk.me.hendy.hendyservice.test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import uk.me.hendy.service.menu.MenuService;
+import uk.me.hendy.hendyservice.menu.MenuService;
 
 public class TestApp {
 

@@ -1,8 +1,6 @@
-package uk.me.hendy.service.menu;
+package uk.me.hendy.hendyservice.menu;
 
-import org.springframework.stereotype.Service;
-
-import uk.me.hendy.service.utility.JsonUtility;
+import uk.me.hendy.hendyservice.utility.JsonUtility;
 
 /**
  * {@inheritDoc}

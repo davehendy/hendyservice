@@ -1,4 +1,6 @@
-package uk.me.hendy.service.menu;
+package uk.me.hendy.hendyservice.menu;
+
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * A menu item for a Hendy Menu.

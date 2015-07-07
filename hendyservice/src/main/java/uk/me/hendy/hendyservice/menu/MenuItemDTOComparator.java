@@ -1,4 +1,4 @@
-package uk.me.hendy.service.menu;
+package uk.me.hendy.hendyservice.menu;
 
 import java.util.Comparator;
 

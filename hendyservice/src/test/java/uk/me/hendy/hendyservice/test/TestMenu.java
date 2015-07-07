@@ -1,14 +1,15 @@
 package uk.me.hendy.hendyservice.test;
 
 import static junit.framework.Assert.*;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import uk.me.hendy.service.menu.MenuDTO;
-import uk.me.hendy.service.menu.MenuService;
+import uk.me.hendy.hendyservice.menu.MenuDTO;
+import uk.me.hendy.hendyservice.menu.MenuService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:hendyservice-spring-config.xml"})

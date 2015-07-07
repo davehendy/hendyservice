@@ -1,12 +1,15 @@
-package uk.me.hendy.service.menu;
+package uk.me.hendy.hendyservice.menu;
 
 import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * A Menu is a holder for a Hendy menu and its associated menu items.
  * @author Dave
  *
  */
+@XmlRootElement(name="Menu")
 public class MenuDTO {
 
 	String menuName;

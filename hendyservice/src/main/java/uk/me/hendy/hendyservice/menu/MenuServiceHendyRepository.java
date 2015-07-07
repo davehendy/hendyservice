@@ -1,4 +1,4 @@
-package uk.me.hendy.service.menu;
+package uk.me.hendy.hendyservice.menu;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import uk.me.hendy.hendyservice.message.Message;
+import uk.me.hendy.hendyservice.utility.JsonUtility;
+import uk.me.hendy.hendyservice.utility.RepositoryUtility;
 import uk.me.hendy.repository.RepositoryApplication;
 import uk.me.hendy.repository.model.Menu;
 import uk.me.hendy.repository.model.MenuItem;
-import uk.me.hendy.service.message.Message;
-import uk.me.hendy.service.utility.JsonUtility;
-import uk.me.hendy.service.utility.RepositoryUtility;
 
 /**
  * {@inheritDoc}
@@ -23,9 +23,8 @@ import uk.me.hendy.service.utility.RepositoryUtility;
 @Service("menuService")
 public class MenuServiceHendyRepository implements MenuService {
 	private static final Logger logger = LoggerFactory.getLogger(MenuServiceHendyRepository.class);
-	
-	//Autowired
-	//MenuDao menuDao;
+	//@Autowired
+	//RepositoryApplicationFactory repositoryApplicationFactory;
 	RepositoryApplication repositoryApplication;
 	//private static RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
 
@@ -33,6 +32,7 @@ public class MenuServiceHendyRepository implements MenuService {
 		logger.debug("getMenu(" + menuName + ")");
 		//RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
 		repositoryApplication = RepositoryUtility.start();
+		//repositoryApplication = repositoryApplicationFactory.getInstance();
 		
 		MenuDTO menuDto = new MenuDTO();
 		MenuItemDTOComparator comparator = new MenuItemDTOComparator();
