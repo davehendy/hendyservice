@@ -73,6 +73,8 @@ public class HendyserviceServletContextListener implements
 			}
 		}
 		
+		System.gc();
+		
 		logger.info("sleeping for a bit to wait for thread shutdown");
 		try {
 			Thread.sleep(10000);

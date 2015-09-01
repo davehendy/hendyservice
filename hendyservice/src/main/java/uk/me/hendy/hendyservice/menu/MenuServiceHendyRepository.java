@@ -21,17 +21,18 @@ import uk.me.hendy.repository.model.MenuItem;
  * {@inheritDoc}
  */
 @Service("menuService")
+@Transactional(propagation=Propagation.SUPPORTS, readOnly=true)
 public class MenuServiceHendyRepository implements MenuService {
 	private static final Logger logger = LoggerFactory.getLogger(MenuServiceHendyRepository.class);
 	//@Autowired
 	//RepositoryApplicationFactory repositoryApplicationFactory;
-	RepositoryApplication repositoryApplication;
+	RepositoryApplication repositoryApplication = RepositoryUtility.start();
 	//private static RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
 
 	public MenuDTO getMenu(String menuName) {
 		logger.debug("getMenu(" + menuName + ")");
 		//RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
-		repositoryApplication = RepositoryUtility.start();
+		//repositoryApplication = RepositoryUtility.start();
 		//repositoryApplication = repositoryApplicationFactory.getInstance();
 		
 		MenuDTO menuDto = new MenuDTO();
@@ -75,6 +76,7 @@ public class MenuServiceHendyRepository implements MenuService {
 	
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=false)
 	public void insertMenu(MenuDTO menuDTO) {
+		logger.debug("insertMenu");
 		Menu menu = new Menu();
 		menu.setName(menuDTO.getMenuName());
 		menu.setDescription(menuDTO.getMenuLink());
@@ -87,7 +89,7 @@ public class MenuServiceHendyRepository implements MenuService {
 			menuItem.setLinkUrl(menuItemDTO.getMenuItemLink());
 			menuItemSet.add(menuItem);
 		}
-		menu.setMenuItemSet(menuItemSet);
+		//menu.setMenuItemSet(menuItemSet);
 		
 		repositoryApplication.createMenu(menu);
 		
