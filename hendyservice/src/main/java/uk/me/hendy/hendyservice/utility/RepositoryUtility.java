@@ -11,8 +11,8 @@ public class RepositoryUtility {
 	//private static RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
 	private static RepositoryApplication app;
 	
-	public static RepositoryApplication start(){
-		logger.info("Starting RepositoryApplication");
+	public static RepositoryApplication getInstance(){
+		logger.info("getting instance of RepositoryApplication");
 		app = RepositoryApplicationFactory.getInstance();
 		return app;
 	}

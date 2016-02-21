@@ -21,10 +21,11 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  -->
   <listener>
   	<listener-class>uk.me.hendy.hendyservice.listener.HendyserviceServletContextListener</listener-class>
   </listener>
-   -->
+  
   <servlet>
     <servlet-name>HendyServiceDispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

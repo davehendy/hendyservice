@@ -30,7 +30,7 @@ public class HendyserviceServletContextListener implements
 			e.printStackTrace();
 		}*/
 		
-		RepositoryUtility.start();
+		RepositoryUtility.getInstance();
 
 	}
 

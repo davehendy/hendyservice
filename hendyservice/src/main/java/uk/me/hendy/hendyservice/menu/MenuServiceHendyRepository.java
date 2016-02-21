@@ -26,7 +26,7 @@ public class MenuServiceHendyRepository implements MenuService {
 	private static final Logger logger = LoggerFactory.getLogger(MenuServiceHendyRepository.class);
 	//@Autowired
 	//RepositoryApplicationFactory repositoryApplicationFactory;
-	RepositoryApplication repositoryApplication = RepositoryUtility.start();
+	RepositoryApplication repositoryApplication = RepositoryUtility.getInstance();
 	//private static RepositoryApplicationFactory fact = new RepositoryApplicationFactory();
 
 	public MenuDTO getMenu(String menuName) {
