@@ -27,7 +27,7 @@ public class MenuController {
 	public @ResponseBody MenuDTO getMenuJson(@PathVariable("name") String name, ModelMap model) {
 		logger.debug("getMenuJson(" + name + ")");
 		MenuDTO menuDTO = new MenuDTO();
-		menuDTO = menuService.getMenu("davetest");
+		menuDTO = menuService.getMenu(name);
 		model.addAttribute("menu", menuDTO);
 		return menuDTO;
 	}
@@ -36,7 +36,7 @@ public class MenuController {
 	public @ResponseBody MenuDTO getMenuXml(@PathVariable("name") String name, ModelMap model) {
 		logger.debug("getMenuXml(" + name + ")");
 		MenuDTO menuDTO = new MenuDTO();
-		menuDTO = menuService.getMenu("davetest");
+		menuDTO = menuService.getMenu(name);
 		model.addAttribute("menu", menuDTO);
 		return menuDTO;
 	}
