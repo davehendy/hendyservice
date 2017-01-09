@@ -27,7 +27,7 @@ public interface MenuService {
 	 * @param menuName is the name of the menu.
 	 * @return a String with HTML.
 	 */
-	String getMenuAsHtml(String menuName);
+	//String getMenuAsHtml(String menuName);
 	
 	/**
 	 * 

@@ -19,9 +19,9 @@ public class MenuServiceDefault implements MenuService {
 	/**
 	 * {@inheritDoc}
 	 */
-	public String getMenuAsHtml(String menuName) {
-		return this.getMenu(menuName).getHtml();
-	}
+	//public String getMenuAsHtml(String menuName) {
+	//	return this.getMenu(menuName).getHtml();
+	//}
 	
 	/**
 	 * {@inheritDoc}

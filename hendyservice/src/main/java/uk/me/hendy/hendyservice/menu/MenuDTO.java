@@ -52,7 +52,7 @@ public class MenuDTO {
 		menuItemArray.add(menuItem);
 	}
 	
-	public String getHtml() {
+	/*public String getHtml() {
 		StringBuilder menuHtml = new StringBuilder();
 		
 		menuHtml.append("<ul id='" + menuName + "'>");
@@ -62,7 +62,7 @@ public class MenuDTO {
 		menuHtml.append("</ul>");
 		
 		return menuHtml.toString();
-	}
+	}*/
 	
 	
 	@Override

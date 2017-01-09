@@ -1,13 +1,17 @@
 package uk.me.hendy.hendyservice.listener;
 
+import java.io.File;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Enumeration;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +25,15 @@ public class HendyserviceServletContextListener implements
 
 	//private com.mysql.jdbc.Driver mySQLDriver = null;
 	public void contextInitialized(ServletContextEvent sce) {
+		//log4j init
+		ServletContext context = sce.getServletContext();
+        String log4jConfigFile = context.getInitParameter("log4j-config-location");
+        String fullPath = context.getRealPath("") + File.separator + log4jConfigFile;
+        logger.debug("log4j config=" + fullPath); 
+        DOMConfigurator.configure(fullPath);
+        //PropertyConfigurator.configure(fullPath);
+        //logger.ROOT_LOGGER_NAME
+		
 		logger.info("servlet context being initialised");
 		
 		/*try {
@@ -80,11 +93,14 @@ public class HendyserviceServletContextListener implements
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
+			logger.error("thread sleep error", e.getMessage());
 			e.printStackTrace();
 		}
+		logger.info("awake and continuing shutdown");
 		
 
 	}
+	
 
 	
 

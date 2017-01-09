@@ -14,7 +14,7 @@
 </appender>
     
 <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
-     <param name="file" value="/home/hendymeu/public_html/hendyservice-log4j.log"/>
+     <param name="file" value="/home/hendymeu/hendyservice-log4j.log"/>
    <!-- <param name="file" value="${user.home}/hendyservice-log4j.log"/> -->
    <param name="threshold" value="debug"/>
    <param name="append" value="true"/>

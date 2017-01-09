@@ -14,8 +14,8 @@
 </appender>
     
 <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
-   <param name="file" value="/home/hendymeu/public_html/hendyservice-log4j.log"/>
-   <!--  <param name="file" value="${user.home}/hendyservice-log4j.log"/> -->
+   <!-- <param name="file" value="/home/hendymeu/public_html/hendyservice-log4j.log"/>-->
+    <param name="file" value="${user.home}/hendyservice-log4j.log"/> 
    <param name="threshold" value="debug"/>
    <param name="append" value="true"/>
    <param name="DatePattern" value="'.'yyyy-MM-dd" />
@@ -24,13 +24,14 @@
    </layout>
 </appender>
 
+
 <logger name="uk.me.hendy" additivity="false">
    <level value="DEBUG"/>
    <appender-ref ref="FILE"/>
    <appender-ref ref="STDOUT" />
 </logger>
 <logger name="org.springframework" additivity="false">
-   <level value="DEBUG"/>
+   <level value="INFO"/>
    <appender-ref ref="FILE"/>
    <appender-ref ref="STDOUT" />
 </logger>

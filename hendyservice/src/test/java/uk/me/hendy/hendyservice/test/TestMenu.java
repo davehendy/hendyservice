@@ -33,9 +33,9 @@ public class TestMenu {
 		String menuName = "davetest";
 		MenuDTO menu = getMenu(menuName);
 		assertNotNull(menu);
-		String menuHtml = menu.getHtml();
+		//String menuHtml = menu.getHtml();
 		
-		System.out.println("HTML=" + menuHtml);
+		//System.out.println("HTML=" + menuHtml);
 	}
 	
 	private MenuDTO getMenu(String menuName){
